@@ -1,0 +1,41 @@
+h1 {
+  font-size: 4em;
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em;
+  margin-inline: 10%;
+  margin-bottom: 2em;
+}
+
+label {
+  border: 1px solid lightgray;
+  padding: 2em;
+  position: relative;
+}
+
+p {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+button {
+  padding: 1em;
+  border: 2px solid lightgray;
+  border-radius: 0.5em;
+  display: block;
+  margin-inline: auto;
+  font-size: 1.5em;
+}
+
+img {
+  position: absolute;
+  max-width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
