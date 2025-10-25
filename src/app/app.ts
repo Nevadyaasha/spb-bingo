@@ -1,14 +1,14 @@
 import {Component} from '@angular/core';
-
-interface Choice {
-  name: string,
-  weight: number,
-  checked: boolean
-}
+import {FormsModule} from '@angular/forms';
+import {OptionCaseComponent} from './components/option-case/option-case.component'
+import {Choice} from './models/choice';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [
+    FormsModule,
+    OptionCaseComponent,
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -80,14 +80,10 @@ export class App {
 
   showResults(): void {
     this.areResultsShown = true;
-  }
-
-  chooseOption(choice: Choice): void {
-    choice.checked = !choice.checked;
-    if (choice.checked) {
-      this.percentage += choice.weight;
-    } else {
-      this.percentage -= choice.weight;
-    }
+    this.checkList.forEach((item: Choice) => {
+      if (item.checked) {
+        this.percentage += item.weight;
+      }
+    })
   }
 }

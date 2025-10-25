@@ -1,17 +1,13 @@
 <h1>Бинго петербуржца</h1>
-<form>
+<div>
   @for (choice of checkList; track choice.name) {
-    <label>
-      <input type="checkbox" (click)="chooseOption(choice)" hidden>
-        {{ choice.name }}
-        @if (choice.checked) {
-          <img src="/check-mark-icon.svg" alt="checkmark">
-        }
-    </label>
+    <option-case [value]="choice" [isBlocked]="areResultsShown"></option-case>
   }
-</form>
-@if (areResultsShown) {
-  <p>Ты на {{ percentage }}% петербуржец! Аминь!</p>
-} @else {
-  <button type="submit" (click)="showResults()">Показать результаты</button>
-}
+</div>
+<footer>
+  @if (areResultsShown) {
+    <p>Ты на {{ percentage }}% петербуржец! Аминь!</p>
+  } @else {
+    <button (click)="showResults()" type="submit">Показать результаты</button>
+  }
+</footer>

@@ -1,0 +1,6 @@
+<button (click)="choose()" [disabled]="isBlocked()">
+  {{value().name}}
+  @if (value().checked) {
+    <img src="/check-mark-icon.svg" alt="checkmark">
+  }
+</button>

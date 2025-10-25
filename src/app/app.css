@@ -1,24 +1,10 @@
 h1 {
-  font-size: 4em;
+  font-size: 2em;
   text-align: center;
 }
 
-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 1em;
-  margin-inline: 10%;
-  margin-bottom: 2em;
-}
-
-label {
-  border: 1px solid lightgray;
-  padding: 2em;
-  position: relative;
-}
-
 p {
-  font-size: 3em;
+  font-size: 1.5em;
   font-weight: bold;
   text-align: center;
 }
@@ -32,10 +18,23 @@ button {
   font-size: 1.5em;
 }
 
-img {
-  position: absolute;
-  max-width: 40%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin-inline: 10%;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 720px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  div {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+   p {
+     font-size: 2.5em;
+   }
 }
